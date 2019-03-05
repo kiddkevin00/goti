@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "Goti",
+    "description": "",
     "slug": "goti",
     "privacy": "unlisted",
     "sdkVersion": "32.0.0",
@@ -29,11 +30,11 @@
       "config": {
         "usesNonExemptEncryption": false
       },
-      "android": {
-        "package": "org.goti.consumer",
-        "versionCode": 1,
-        "permissions": []
-      }
+    },
+    "android": {
+      "package": "org.goti.consumer",
+      "versionCode": 1,
+      "permissions": []
     }
   }
 }
