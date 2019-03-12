@@ -24,17 +24,21 @@
       "assets/**"
     ],
     "ios": {
-      "bundleIdentifier": "org.goti.consumer",
+      "bundleIdentifier": "com.goti.consumer.main",
       "supportsTablet": false,
-      "buildNumber": "1",
+      "buildNumber": "2",
       "config": {
         "usesNonExemptEncryption": false
-      },
+      }
     },
     "android": {
-      "package": "org.goti.consumer",
+      "package": "com.goti.consumer.main",
       "versionCode": 1,
-      "permissions": []
+      "permissions": [],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon_android.png",
+        "backgroundColor": "#9370DB"
+      }
     }
   }
 }

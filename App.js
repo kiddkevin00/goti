@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import clone from 'lodash.clone';
 import PropTypes from 'prop-types';
 
-ignoreWarning('Setting a timer');
+//ignoreWarning('Setting a timer');
 
 const store = configureStore();
 const styles = StyleSheet.create({
