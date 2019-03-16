@@ -1,19 +1,42 @@
+import dimensions from '../constants/dimensions';
+import { Container, Header, Content, Left, Body, Right, Button, Icon, Text } from 'native-base';
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { Image, ScrollView, StyleSheet, StatusBar } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
-    title: 'Links',
+    header: null,
   };
 
   render() {
     return (
-      <ScrollView style={styles.container}>
-        {/* Go ahead and delete ExpoLinksView and replace it with your
-           * content, we just wanted to provide you with some helpful links */}
-        <ExpoLinksView />
-      </ScrollView>
+      <Container style={{ backgroundColor: '#000' }}>
+        <Header
+          style={{
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            height: 65,
+            borderBottomWidth: 0,
+          }}
+        >
+          <StatusBar barStyle="light-content" />
+          <Left style={{ flexGrow: 1 }}>
+            <Button transparent={true} onPress={() => {}}>
+              <Icon name="md-person" style={{ color: 'white', fontSize: 27 }} />
+            </Button>
+          </Left>
+          <Body style={{ flexGrow: 4, alignItems: 'center' }}>
+            <Image source={require('../assets/images/header-title.png')} />
+          </Body>
+          <Right style={{ flexGrow: 1 }}>
+            <Button transparent={true} onPress={() => {}}>
+              <Icon name="ios-camera" style={{ color: 'white', fontSize: 27 }} />
+            </Button>
+          </Right>
+        </Header>
+
+        <Content />
+      </Container>
     );
   }
 }

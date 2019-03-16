@@ -1,5 +1,5 @@
 import dimensions from '../constants/dimensions';
-import { Container, Header, Content, Left, Body, Right, Title, Button, Icon, Text } from 'native-base';
+import { Container, Header, Content, Left, Body, Right, Button, Icon, Text } from 'native-base';
 import React from 'react';
 import {
   Image,
@@ -35,9 +35,7 @@ export default class HomeScreen extends React.Component {
             </Button>
           </Left>
           <Body style={{ flexGrow: 4, alignItems: 'center' }}>
-            <Image
-              source={require('../assets/images/header-title.png')}
-            />
+            <Image source={require('../assets/images/header-title.png')} />
           </Body>
           <Right style={{ flexGrow: 1 }}>
             <Button transparent={true} onPress={() => {}}>
