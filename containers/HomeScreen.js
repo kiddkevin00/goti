@@ -51,7 +51,7 @@ export default class HomeScreen extends React.Component {
             source={require('../assets/images/sample-feed.jpg')}
             style={{
               width: dimensions.window.width,
-              height: 500,
+              height: dimensions.window.height * 0.8,
               resizeMode: 'cover',
             }}
           />
