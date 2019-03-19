@@ -1,6 +1,9 @@
 import React from 'react';
 import { Platform, View } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import {
+  createStackNavigator,
+  createDrawerNavigator,
+} from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../containers/HomeScreen';
@@ -8,59 +11,47 @@ import LinksScreen from '../containers/LinksScreen';
 import SettingsScreen from '../containers/SettingsScreen';
 
 const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+  home: HomeScreen,
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: <View />,
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-home' : 'md-home'}
-    />
+  drawerLabel: <View />,
+  drawerIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-folder-open' : 'md-folder-open'} />
   ),
 };
 
 const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+  links: LinksScreen,
 });
 
 LinksStack.navigationOptions = {
-  tabBarLabel: <View />,
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-search' : 'md-search'}
-    />
+  drawerLabel: <View />,
+  drawerIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-megaphone' : 'md-megaphone'} />
   ),
 };
 
 const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+  settings: SettingsScreen,
 });
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: <View />,
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-    />
+  drawerLabel: <View />,
+  drawerIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-book' : 'md-book'} />
   ),
 };
 
-export default createBottomTabNavigator({
-    HomeStack,
-    LinksStack,
-    SettingsStack,
+export default createDrawerNavigator(
+  {
+    HOME: HomeStack,
+    LINK: LinksStack,
+    SETTINGS: SettingsStack,
   },
   {
-    tabBarOptions: {
-      style: { borderTopColor: '#000' },
-      activeTintColor: '#000',
-      activeBackgroundColor: '#000',
-      inactiveTintColor: '#FFF',
-      inactiveBackgroundColor: '#000',
-    },
+    initialRouteName: 'HOME',
+    drawerBackgroundColor: 'transparent',
+    drawerWidth: 50,
   }
 );

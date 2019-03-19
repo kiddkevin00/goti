@@ -75,7 +75,6 @@ export default class App extends Component {
       <Root>
         <Provider store={store}>
           <View style={styles.container}>
-            <StatusBar barStyle="default" hidden={false} />
             <AppNavigator />
           </View>
         </Provider>
