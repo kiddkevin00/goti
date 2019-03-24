@@ -36,7 +36,7 @@ export default class HomeScreen extends React.Component {
     const footerHeight = 55;
 
     return (
-      <ImageBackground style={{ width, height }} source={require('../assets/images/splash.png')}>
+      <ImageBackground style={{ width, height: height - (StatusBar.currentHeight || 0) }} source={require('../assets/images/splash.png')}>
         <Container style={{ backgroundColor: 'transparent' }}>
           <Header
             iosBarStyle="light-content"
@@ -83,12 +83,12 @@ export default class HomeScreen extends React.Component {
 
           <Footer
             style={{
-              backgroundColor: 'rgba(0, 0, 0, 0)',
+              backgroundColor: 'transparent',
               borderTopWidth: 0,
               height: footerHeight,
             }}
           >
-            <FooterTab>
+            <FooterTab style={{ backgroundColor: 'transparent' }}>
               <Button>
                 <Icon name="globe" style={{ color: 'white', fontSize: 40 }} active={true} />
               </Button>
@@ -99,7 +99,7 @@ export default class HomeScreen extends React.Component {
                 <Icon name="search" style={{ color: 'white', fontSize: 24 }} active={true} />
               </Button>
               <Button>
-                <Icon name="apps" style={{ marginLeft: 10, color: 'white', fontSize: 24 }} active={true} />
+                <Icon name="apps" style={{ color: 'white', fontSize: 24 }} active={true} />
               </Button>
               <Button>
                 <Icon name="list-box" style={{ color: 'white', fontSize: 24 }} active={true} />
